@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>WebApp Dashboard</title>
+    <!-- Google Fonts -->
+    <!-- <link href="https://fonts.googleapis.com/css?family=Baloo&display=swap" rel="stylesheet"> -->
+
+
+</head>
+
+<body class="grid-container">
+    <!-- Header Section -->
+    <header>
+        <h1><strong>Your</strong>App™</h1>
+        <div class="flex-child">
+            <div class="bell">
+                <img src="icons/icon-bell.svg" alt="icon-bell" class="bell-icon">
+            </div>
+            <div id="notifications"></div>
+            <img src="images/naoto-profile.png" class="header-profile-image" alt="progile-image">
+            <span>&middot;</span>
+            <h3>Naoto Sai</h3>
+        </div>
+    </header>
+
+    <!-- Nav Section -->
+    <nav id="nav-section">
+        <a href="#"><img src="icons/icon-dashboard.svg" alt="dashboard-icon"></a>
+        <a href="#"><img src="icons/icon-members.svg" alt="members-icon"></a>
+        <a href="#"><img src="icons/icon-visits.svg" alt="visits-icon"></a>
+        <a href="#"><img src="icons/icon-settings.svg" alt="settings-icon"></a>
+    </nav>
+
+    <!-- Main Area -->
+    <main id="main">
+        <!-- Section A / Dashboard & Alert -->
+        <section class="section-a">
+            <div class="main-header">
+                <h2 class="headline">Dashboard</h2>
+                <div class="main-head-search">
+                    <form method="get" action="#" class="search-container">
+                        <input class="search-input" type="text" placeholder="Search...">
+                        <i class="fa fa-search icon"></i>
+                    </form>
+                </div>
+            </div>
+            <!-- Alert Banner -->
+            <div class="alert" id="alert">
+            </div>
+        </section>
+
+
+        <!-- Section B_Traffic Charts -->
+        <section class="traffic">
+            <div class="traffic-header">
+                <h3>TRAFFIC</h3>
+                <ul class="traffic-nav">
+                    <li class="traffic-nav-link">Hourly</li>
+                    <li class="traffic-nav-link">Daily</li>
+                    <li class="traffic-nav-link">Weekly</li>
+                    <li class="traffic-nav-link">Monthly</li>
+                </ul>
+            </div>
+
+            <div class="widget-container-full">
+                <canvas id="traffic-chart"></canvas>
+                
+            </div>
+
+        </section>
+
+
+        <!-- Section C... -->
+        <section id="section-c">
+            <div class="section-b-1">
+                <h3>DAILY TRAFFIC</h3>
+                <img src="" alt="">
+            </div>
+            <div class="section-b-2">
+                <h3>MOBILE USERS</h3>
+                <img src="" alt="">
+            </div>
+
+        </section>
+
+        <!-- Section C -->
+        <section id="section-c">
+            <h3>SOCIAL STATS</h3>
+            <ul>
+                <li>
+                    <div class="card">
+                        <img src="" alt="">
+                    </div>
+                </li>
+                <li>
+                    <div class="card">
+                        <img src="" alt="">
+                    </div>
+                </li>
+                <li>
+                    <div class="card">
+                        <img src="" alt="">
+                    </div>
+                </li>
+            </ul>
+
+        </section>
+
+        <!-- Section D -->
+        <section id="section-d">
+            <div class="section-d-1">
+                <h3>NEW MEMBERS</h3>
+            </div>
+            <div class="section-d-2">
+                <h3>MESSAGE USER</h3>
+            </div>
+            <div class="section-d-3">
+                <h3>RECENT ACTIVITY</h3>
+            </div>
+            <div class="section-d-4">
+                <h3>SETTINGS</h3>
+            </div>
+
+        </section>
+
+    </main>
+
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+    <script src="index.js" charset="utf-8"></script>
+</body>
+
+</html>
