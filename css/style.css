@@ -241,11 +241,54 @@ nav a:hover {
 
 .social-stats ul {
     list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.card {
+    display: flex;
+    width: 100%;
+    border-style: solid;
+    margin: 10px 0;
+    padding: 50px 0;
+    justify-content: flex-start;
+    background-color: #DFE2F2;
 }
 
 .social-icon {
-    width: 30px;
+    position:absolute;
+    z-index: 2;
+    top: 25px;
+    left: 25px;
+    width: 50px;
+    height: auto;
+    margin: 5px 0;
+    align-items: center;
     
+}
+
+.icon-background{
+    position: relative;
+    z-index: 1;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: #7477bf;
+    margin-left: 20px;
+}
+
+.sns-name-and-number {
+    margin: 0 10px;
+    width: 60px;
+    height: 100px;
+}
+
+.sns-name-and-number h3 {
+    color: #7477bf;
+}
+
+h4 {
+    font-size: 2.5em;
 }
 
 /* Media Queries */
