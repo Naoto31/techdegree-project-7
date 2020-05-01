@@ -1,9 +1,9 @@
 const alert = document.getElementById('alert');
 
 
-    alert.onload = setTimeout(function () {
-        alertOnload()
-    }, 1000);
+alert.onload = setTimeout(function () {
+    alertOnload()
+}, 1000);
 
 function alertOnload() {
     const h3 = document.createElement('h3');
@@ -119,7 +119,7 @@ trafficNav.addEventListener('click', e => {
         // console.log(navElement);
 
         if (navName === 'Hourly') {
-           trafficData = trafficData1;
+            trafficData = trafficData1;
         } else if (navName === 'Daily') {
             trafficData = trafficData2;
         } else if (navName === 'Weekly') {
@@ -131,6 +131,73 @@ trafficNav.addEventListener('click', e => {
             data: trafficData,
             options: trafficOptions
         });
-    }});
+    }
+});
 
-    
+
+
+// Section C - Daily Traffic & Mobile Users
+
+const dailyCanvas = document.getElementById("daily-chart-widget");
+
+// data for daily traffic bar chart
+const dailyData = {
+    labels: ["S", "M", "T", "W", "T", "F", "S"],
+    datasets: [{
+        label: '# of Hits',
+        data: [75, 115, 175, 125, 225, 200, 100],
+        backgroundColor: '#7477BF',
+        borderWidth: 1
+    }]
+};
+const dailyOptions = {
+    scales: {
+        yAxes: [{
+            ticks: {
+                beginAtZero: true
+            }
+        }]
+    },
+    legend: {
+        display: false
+    }
+}
+
+let dailyChart = new Chart(dailyCanvas, {
+    type: 'bar',
+    data: dailyData,
+    options: dailyOptions
+});
+
+
+const mobileCanvas = document.getElementById("mobile-chart-widget");
+
+const mobileData = {
+    labels: ["Desktop", "Tablet", "Phones"],
+    datasets: [{
+        label: '# of Users',
+        data: [2000, 550, 500],
+        borderWidth: 0,
+        backgroundColor: [
+            '#7477BF',
+            '#78CF82',
+            '#51B6C8'
+        ]
+    }]
+};
+
+const mobileOptions = {
+    legend: {
+        position: 'right',
+        labels: {
+            boxWidth: 20,
+            fontStyle: 'bold'
+        }
+    }
+}
+
+let mobileChart = new Chart(mobileCanvas, {
+    type: 'doughnut',
+    data: mobileData,
+    options: mobileOptions
+});

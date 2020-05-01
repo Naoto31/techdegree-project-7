@@ -71,45 +71,64 @@
 
             <div class="widget-container-full">
                 <canvas id="traffic-chart"></canvas>
-                
+
             </div>
 
         </section>
 
 
-        <!-- Section C... -->
+        <!-- Section C_Daily Traffic & Mobile Users -->
         <section id="section-c">
-            <div class="section-b-1">
+            <div class="daily-traffic">
                 <h3>DAILY TRAFFIC</h3>
-                <img src="" alt="">
+                <div class="widget-container-full">
+                    <canvas id="daily-chart-widget"></canvas>
+                </div>
             </div>
-            <div class="section-b-2">
+            <div class="mobile-users">
                 <h3>MOBILE USERS</h3>
-                <img src="" alt="">
+                <div class="widget-container-full">
+                    <canvas id="mobile-chart-widget"></canvas>
+                </div>
             </div>
 
         </section>
 
-        <!-- Section C -->
-        <section id="section-c">
+        <!-- Section D___Social Stats -->
+        <section id="section-d">
+            <div class="social-stats">
             <h3>SOCIAL STATS</h3>
             <ul>
                 <li>
                     <div class="card">
-                        <img src="" alt="">
+                        <img src="icons/icon-twitter.svg" class="social-icon" alt="twitter-icon">
+                        <div class="sns-name-and-number">
+                            <h3>Twitter</h3>
+                            <h4>10,345</h4>
+                        </div>
                     </div>
                 </li>
                 <li>
                     <div class="card">
-                        <img src="" alt="">
+                        <img src="icons/icon-facebook.svg" class="social-icon" alt="facebook-icon">
+                        <div class="sns-name-and-number">
+                            <h3>Facebook</h3>
+                            <h4>8,739</h4>
+                        </div>
                     </div>
                 </li>
                 <li>
                     <div class="card">
-                        <img src="" alt="">
+                        <img src="icons/icon-google-plus.svg" class="social-icon" alt="google-plus-icon">
+                        <div class="sns-name-and-number">
+                            <h3>Google+</h3>
+                            <h4>2,530</h4>
+                        </div>
                     </div>
                 </li>
             </ul>
+        </div>
+
 
         </section>
 
@@ -133,7 +152,7 @@
     </main>
 
 
-    
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
     <script src="index.js" charset="utf-8"></script>
 </body>

@@ -222,6 +222,32 @@ nav a:hover {
     width: auto;
 }
 
+/* Section C_Daily Traffic & Mobile Users */
+
+.daily-traffic,
+.mobile-users {
+    margin: 0 15px;
+    height: auto;
+    color: #888888;
+} 
+
+/* Section D___Social Stats */
+
+.social-stats {
+    margin: 0 15px;
+    height: auto;
+    color: #888888;
+} 
+
+.social-stats ul {
+    list-style-type: none;
+}
+
+.social-icon {
+    width: 30px;
+    
+}
+
 /* Media Queries */
 
 /* @media (min-width: 768px) {
