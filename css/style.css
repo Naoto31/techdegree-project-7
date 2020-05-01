@@ -79,7 +79,7 @@ header h1 {
     margin-right: 13px;
 }
 
-header  {
+header {
     color: white;
     font-size: 1em;
 }
@@ -143,7 +143,7 @@ nav a:hover {
     align-items: center;
 }
 
-.search-input{
+.search-input {
     border: none;
     padding: 10px 0 10px 5px;
     width: 80%;
@@ -156,13 +156,13 @@ nav a:hover {
     border: none;
     margin-right: 5px;
     padding: 6px 10px 6px 0;
-    
+
 }
 
 /* Section A_alert */
 
 .alert {
-    margin: 20px 15px 10px 15px;    
+    margin: 20px 15px 10px 15px;
     background-color: #7477bf;
     border-radius: 0.5em;
     display: flex;
@@ -174,7 +174,7 @@ nav a:hover {
     padding: 5px 10px;
     font-size: 1em;
     color: white;
-} 
+}
 
 .icon-times {
     color: white;
@@ -186,7 +186,7 @@ nav a:hover {
     margin: 0 15px;
     height: auto;
     color: #888888;
-} 
+}
 
 .traffic-header {
     display: flex;
@@ -229,15 +229,15 @@ nav a:hover {
     margin: 0 15px;
     height: auto;
     color: #888888;
-} 
+}
 
 /* Section D___Social Stats */
 
 .social-stats {
-    margin: 0 15px;
+    margin: 40px 15px;
     height: auto;
     color: #888888;
-} 
+}
 
 .social-stats ul {
     list-style-type: none;
@@ -256,7 +256,7 @@ nav a:hover {
 }
 
 .social-icon {
-    position:absolute;
+    position: absolute;
     z-index: 2;
     top: 25px;
     left: 25px;
@@ -264,10 +264,10 @@ nav a:hover {
     height: auto;
     margin: 5px 0;
     align-items: center;
-    
+
 }
 
-.icon-background{
+.icon-background {
     position: relative;
     z-index: 1;
     width: 100px;
@@ -290,6 +290,71 @@ nav a:hover {
 h4 {
     font-size: 2.5em;
 }
+
+/* Section E___New Members & Recent Activity */
+
+.new-members {
+    margin: 0;
+    color: #888888;
+    border-bottom: solid 1px gainsboro;
+}
+
+.new-members h3 {
+    margin: 20px 15px;
+
+}
+
+.new-members ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.member {
+    display: flex;
+    align-items: center;
+}
+
+.member a {
+    color: #7477bf;
+    text-decoration: none;
+}
+
+.member-container {
+    display: flex;
+    margin: 0 15px;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: solid 1px gainsboro;
+}
+
+.member-container-bottom {
+    display: flex;
+    margin: 0 15px 15px 15px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.member-container p {
+    font-size: 0.7em;
+}
+
+.member-container-bottom p {
+    font-size: 0.7em;
+}
+
+.member-name {
+    font-size: 1em;
+    margin:0;
+}
+
+.member-photo {
+    border-radius: 50%;
+    width: 60px;
+    height: auto;
+    margin: 10px 10px 10px 0;
+}
+
 
 /* Media Queries */
 
