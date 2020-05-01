@@ -38,6 +38,53 @@ let trafficData = {
     }]
 };
 
+let trafficData1 = {
+    labels: ["16-22", "23-29", "30-5", "6-12", "13-19", "20-26", "27-3",
+        "4-10", "11-17", "18-24", "25-31"
+    ],
+    datasets: [{
+        data: [750, 1250, 1000, 2000, 1500, 1750, 1250, 1850, 2250, 1500,
+            2500
+        ],
+        backgroundColor: 'rgba(116, 119, 191, .3)',
+        borderWidth: 1,
+    }]
+};
+
+// Traffic Chart 2
+
+let trafficData2 = {
+    labels: ["16-22", "23-29", "30-5", "6-12", "13-19", "20-26", "27-3",
+        "4-10", "11-17", "18-24", "25-31"
+    ],
+    datasets: [{
+        data: [750, 1600, 1000, 2000, 1500, 1750, 1250, 1050, 2250, 1500,
+            2500
+        ],
+        backgroundColor: 'rgba(116, 119, 191, .3)',
+        borderWidth: 1,
+    }]
+};
+
+
+// Traffic Chart 3
+
+let trafficData3 = {
+    labels: ["16-22", "23-29", "30-5", "6-12", "13-19", "20-26", "27-3",
+        "4-10", "11-17", "18-24", "25-31"
+    ],
+    datasets: [{
+        data: [10000, 600, 1000, 2000, 500, 1750, 1250, 1050, 250, 1500,
+            2500
+        ],
+        backgroundColor: 'rgba(116, 119, 191, .3)',
+        borderWidth: 1,
+    }]
+};
+
+
+// Traffic Options
+
 let trafficOptions = {
     aspectRatio: 2.5,
     responsive: true,
@@ -61,3 +108,29 @@ let trafficChart = new Chart(trafficCanvas, {
     data: trafficData,
     options: trafficOptions
 });
+
+
+let trafficNav = document.getElementsByClassName('traffic-nav')[0];
+trafficNav.addEventListener('click', e => {
+    if (e.target.tagName === 'LI') {
+        const navName = e.target.textContent;
+        const navElement = e.target;
+        // console.log(navName);
+        // console.log(navElement);
+
+        if (navName === 'Hourly') {
+           trafficData = trafficData1;
+        } else if (navName === 'Daily') {
+            trafficData = trafficData2;
+        } else if (navName === 'Weekly') {
+            trafficData = trafficData3
+        }
+
+        let trafficChart = new Chart(trafficCanvas, {
+            type: 'line',
+            data: trafficData,
+            options: trafficOptions
+        });
+    }});
+
+    

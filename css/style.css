@@ -125,6 +125,7 @@ nav a:hover {
 .headline {
     margin: 0 15px;
     font-size: 1.3em;
+    color: #888888;
 }
 
 
@@ -184,6 +185,7 @@ nav a:hover {
 .traffic {
     margin: 0 15px;
     height: auto;
+    color: #888888;
 } 
 
 .traffic-header {
@@ -203,8 +205,17 @@ nav a:hover {
 }
 
 .traffic-nav-link {
-    margin: 0 10px;
+    margin: 0 5px;
+    padding: 0 5px;
+    color: #888888;
 }
+
+.traffic-nav-link:hover {
+    color: white;
+    background-color: #7ebdb4;
+    border-radius: 4px;
+}
+
 
 .widget-container-full {
     height: auto;
