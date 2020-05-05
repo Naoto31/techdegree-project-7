@@ -21,6 +21,7 @@ h3 {
 
 .grid-container {
     height: 100vh;
+    width: 100%;
     display: grid;
     grid-template-columns: 100%;
     grid-template-rows: auto;
@@ -108,11 +109,11 @@ nav a:hover {
 
 /* Main Area */
 
-/* main {
+main {
     grid-area: main;
-    display: grid;
-    width: 100%
-} */
+    display: block;
+    width: 100%;
+}
 
 /* Section A_Dashboard */
 
@@ -364,6 +365,23 @@ h4 {
     margin: 0;
 }
 
+.recent-activity {
+    margin: 0;
+    color: #888888;
+    border-bottom: solid 1px gainsboro;
+}
+
+.recent-activity h3 {
+    margin: 20px 15px;
+
+}
+
+.recent-activity ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
 
 /* Section F___Message User & Settings */
 
@@ -587,11 +605,72 @@ input:checked+.slider:after {
 
 /* Media Queries */
 
-/* @media (min-width: 768px) {
+@media (min-width: 768px) {
     .grid-container {
-    grid-template-columns: 55px 1fr;
-    grid-template-areas:
-    "header header"
-    "navigation main";
+        grid-template-columns: 80px 1fr;
+        grid-template-rows: 80px;
+        grid-template-areas:
+            "header header"
+            "nav main";
     }
+
+
+    #dashboard {
+        grid-area: dash;
+    }
+
+    .traffic {
+        grid-area: traffic;
+    }
+
+    .daily-traffic {
+        grid-area: daily;
+
+    }
+
+    .mobile-users {
+        grid-area: mobile;
+    }
+
+    .section-d {
+        grid-area: social;
+    }
+
+    .new-members {
+        grid-area: new-mem;
+    }
+
+    .recent-activity {
+        grid-area: activ;
+    }
+
+    .message-user {
+        grid-area: message;
+    }
+
+    .settings {
+        grid-area: settings;
+    }
+
+    main {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "dash dash"
+            "traffic traffic"
+            "daily mobile"
+            "social social"
+            "new-mem activ"
+            "message settings";
+
+    }
+
+}
+
+
+
+
+/* 
+    @media (min-width: 1024px) {
+
     } */
