@@ -85,6 +85,22 @@ let trafficData3 = {
     }]
 };
 
+// Traffic Chart 4
+
+let trafficData4 = {
+    labels: ["16-22", "23-29", "30-5", "6-12", "13-19", "20-26", "27-3",
+        "4-10", "11-17", "18-24", "25-31"
+    ],
+    datasets: [{
+        data: [10000, 600, 1500, 2000, 5000, 1750, 1250, 1050, 250, 1500,
+            2500
+        ],
+        backgroundColor: 'rgba(116, 119, 191, .3)',
+        borderWidth: 1,
+    }]
+
+};
+
 
 // Traffic Options
 
@@ -108,7 +124,7 @@ let trafficOptions = {
 
 let trafficChart = new Chart(trafficCanvas, {
     type: 'line',
-    data: trafficData,
+    data: trafficData1,
     options: trafficOptions
 });
 
@@ -116,17 +132,19 @@ let trafficChart = new Chart(trafficCanvas, {
 let trafficNav = document.getElementsByClassName('traffic-nav')[0];
 trafficNav.addEventListener('click', e => {
     if (e.target.tagName === 'LI') {
-        const navName = e.target.textContent;
+        let navName = e.target.textContent;
         const navElement = e.target;
         // console.log(navName);
         // console.log(navElement);
 
         if (navName === 'Hourly') {
             trafficData = trafficData1;
-        } else if (navName === 'Daily') {
+        } if (navName === 'Daily') {
             trafficData = trafficData2;
-        } else if (navName === 'Weekly') {
-            trafficData = trafficData3
+        } if (navName === 'Weekly') {
+            trafficData = trafficData3;
+        } if (navName === 'Monthly') {
+            trafficData = trafficData4;
         }
 
         let trafficChart = new Chart(trafficCanvas, {
@@ -220,3 +238,19 @@ send.addEventListener('click', () => {
         alert(`Message successfully sent to: ${user.value}`);
     }
 });
+
+// Notifications dropdown //
+
+const dropDown = document.querySelector('.drop-down');
+const bell = document.querySelector('.bell')
+dropDown.style.display = 'none'
+
+
+bell.addEventListener("click", (e) => {
+    if (dropDown.style.display === 'none') {
+        dropDown.style.display = "";
+
+    } else {
+        dropDown.style.display = "none";
+    }
+})
