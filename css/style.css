@@ -219,11 +219,11 @@ main {
     border-radius: 4px;
 }
 
-
 .widget-container-full {
     height: auto;
     width: auto;
 }
+
 
 /* Section C_Daily Traffic & Mobile Users */
 
@@ -735,7 +735,7 @@ input:checked+.slider:after {
 
     #section-d {
         display: grid;
-        grid-template-columns: 1fr, 1fr, 1fr;
+        grid-template-columns: repeat(3, minmax(auto, 1fr));
         grid-column-gap: 15px;
         grid-template-areas:
         "card-x card-x card-x" 
