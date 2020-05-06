@@ -233,6 +233,10 @@ main {
     color: #888888;
 }
 
+.daily-mobile {
+    width: 100%;
+}
+
 /* Section D___Social Stats */
 
 .social-stats {
@@ -615,13 +619,32 @@ input:checked+.slider:after {
     }
 
 
-    #dashboard {
-        grid-area: dash;
+    #section-a {
+        grid-area: section-a;
     }
 
-    .traffic {
-        grid-area: traffic;
+    #section-b {
+        grid-area: section-b;
     }
+
+    #section-c {
+        grid-area: section-c;
+    }
+
+    #section-d {
+        grid-area: section-d;
+    }
+
+    #section-e {
+        grid-area: section-e;
+    }
+
+    #section-f {
+        grid-area: section-f;
+    }
+
+    
+    /* for Section-c */
 
     .daily-traffic {
         grid-area: daily;
@@ -632,41 +655,74 @@ input:checked+.slider:after {
         grid-area: mobile;
     }
 
-    .section-d {
-        grid-area: social;
-    }
+    /* for section-e */
 
     .new-members {
-        grid-area: new-mem;
+        grid-area: new-member;
     }
 
     .recent-activity {
-        grid-area: activ;
+        grid-area: recent-activ;
     }
 
+    /* for section-f */
+
     .message-user {
-        grid-area: message;
+        grid-area: message-user;
     }
 
     .settings {
         grid-area: settings;
     }
+    
+
 
     main {
+        width: auto;
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr;
         grid-template-areas:
-            "dash dash"
-            "traffic traffic"
-            "daily mobile"
-            "social social"
-            "new-mem activ"
-            "message settings";
-
+            "section-a"
+            "section-b"
+            "section-c"
+            "section-d"
+            "section-e"
+            "section-f";
     }
 
-}
+    #section-c {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 
+            "daily mobile";
+    }
 
+    #section-e {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 
+            "new-member recent-activ";
+    }
+
+    #section-f {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 
+            "message-user settings";
+    }
+
+    /* */
+
+    /* #section-a,
+    #section-b,
+    #section-c,
+    #section-d,
+    #section-e,
+    #section-f {
+        width: 100%;
+    } */
+
+}
 
 
 
