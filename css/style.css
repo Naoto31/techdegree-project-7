@@ -694,14 +694,15 @@ input:checked+.slider:after {
 
     #section-c {
         display: grid;
-        grid-template-columns: repeat(2, minmax(auto, 1fr));
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-column-gap: 15px;
         grid-template-areas: 
             "daily mobile";
     }
 
     #section-e {
         display: grid;
-        grid-template-columns: repeat(2, minmax(auto, 1fr));
+        grid-template-columns: repeat(2, minmax(0, 1fr));
         grid-column-gap: 15px;
         grid-template-areas: 
             "new-member recent-activ";
