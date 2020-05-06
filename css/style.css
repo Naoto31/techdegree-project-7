@@ -203,6 +203,7 @@ main {
 
 .traffic-nav {
     display: flex;
+    flex-wrap: wrap;
     list-style-type: none;
 }
 
@@ -239,13 +240,13 @@ main {
 
 /* Section D___Social Stats */
 
-.social-stats {
+#section-d {
     margin: 40px 15px;
     height: auto;
     color: #888888;
 }
 
-.social-stats ul {
+#section-d ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -302,6 +303,7 @@ h4 {
 /* New Members */
 
 .new-members {
+    flex-wrap: wrap;
     margin: 0;
     color: #888888;
     border-bottom: solid 1px gainsboro;
@@ -611,7 +613,7 @@ input:checked+.slider:after {
 
 @media (min-width: 768px) {
     .grid-container {
-        grid-template-columns: 80px 1fr;
+        grid-template-columns: 80px minmax(0, 1fr);
         grid-template-rows: 80px;
         grid-template-areas:
             "header header"
@@ -680,7 +682,7 @@ input:checked+.slider:after {
     main {
         width: auto;
         display: grid;
-        grid-template-columns: 1fr;
+        grid-template-columns: minmax(0, 1fr);
         grid-template-areas:
             "section-a"
             "section-b"
@@ -692,36 +694,58 @@ input:checked+.slider:after {
 
     #section-c {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: repeat(2, minmax(auto, 1fr));
         grid-template-areas: 
             "daily mobile";
     }
 
     #section-e {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: repeat(2, minmax(auto, 1fr));
+        grid-column-gap: 15px;
         grid-template-areas: 
             "new-member recent-activ";
     }
 
     #section-f {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: repeat(2, minmax(auto, 1fr));
+        grid-column-gap: 15px;
         grid-template-areas: 
             "message-user settings";
     }
 
-    /* */
 
-    /* #section-a,
-    #section-b,
-    #section-c,
-    #section-d,
-    #section-e,
-    #section-f {
-        width: 100%;
-    } */
+    /* for social-stats */
+    .card-a {
+        grid-area: card-a;
+    }
 
+    .card-b {
+        grid-area: card-b;
+    }
+
+    .card-c {
+        grid-area: card-c;
+    }
+
+    .card-x {
+        grid-area: card-x;
+    }
+
+    #section-d {
+        display: grid;
+        grid-template-columns: 1fr, 1fr, 1fr;
+        grid-column-gap: 15px;
+        grid-template-areas:
+        "card-x card-x card-x" 
+        "card-a card-b card-c";
+    }
+
+    .message-user {
+        border-bottom: none;
+
+    }
 }
 
 
