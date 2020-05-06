@@ -1,7 +1,10 @@
-const alert = document.getElementById('alert');
+const alertBanner = document.getElementById('alert');
+const user = document.getElementById("user");
+const message = document.getElementById("message");
+const send = document.getElementById("send");
 
 
-alert.onload = setTimeout(function () {
+alertBanner.onload = setTimeout(function () {
     alertOnload()
 }, 1000);
 
@@ -13,7 +16,7 @@ function alertOnload() {
     alertDiv.appendChild(h3);
     alertDiv.appendChild(iconTimes);
     h3.innerHTML = 'Alert';
-    alert.style.display = '';
+    alertBanner.style.display = '';
 
     iconTimes.addEventListener('click', (e) => {
         alertDiv.style.display = 'none';
@@ -200,4 +203,20 @@ let mobileChart = new Chart(mobileCanvas, {
     type: 'doughnut',
     data: mobileData,
     options: mobileOptions
+});
+
+
+// Message Section //
+
+send.addEventListener('click', () => {
+    // ensure user and message fields are filled out
+    if (user.innerHTML === "" && message.innerHTML === "") {
+        alert("Please fill out user and message fields before sending");
+    } else if (user.value === "") {
+        alert("Please fill out user field before sending");
+    } else if (message.value === "") {
+        alert("Please fill out message field before sending");
+    } else {
+        alert(`Message successfully sent to: ${user.value}`);
+    }
 });
