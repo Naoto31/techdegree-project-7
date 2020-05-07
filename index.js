@@ -36,7 +36,7 @@ let trafficData = {
         data: [750, 1250, 1000, 2000, 1500, 1750, 1250, 1850, 2250, 1500,
             2500
         ],
-        backgroundColor: 'rgba(116, 119, 191, .3)',
+        backgroundColor: 'rgba(195,237,234, .3)',
         borderWidth: 1,
     }]
 };
@@ -49,7 +49,7 @@ let trafficData1 = {
         data: [750, 1250, 1000, 2000, 1500, 1750, 1250, 1850, 2250, 1500,
             2500
         ],
-        backgroundColor: 'rgba(116, 119, 191, .3)',
+        backgroundColor: 'rgba(195,237,234, .3)',
         borderWidth: 1,
     }]
 };
@@ -64,7 +64,7 @@ let trafficData2 = {
         data: [750, 1600, 1000, 2000, 1500, 1750, 1250, 1050, 2250, 1500,
             2500
         ],
-        backgroundColor: 'rgba(116, 119, 191, .3)',
+        backgroundColor: 'rgba(195,237,234, .3)',
         borderWidth: 1,
     }]
 };
@@ -80,7 +80,7 @@ let trafficData3 = {
         data: [10000, 600, 1000, 2000, 500, 1750, 1250, 1050, 250, 1500,
             2500
         ],
-        backgroundColor: 'rgba(116, 119, 191, .3)',
+        backgroundColor: 'rgba(195,237,234, .3)',
         borderWidth: 1,
     }]
 };
@@ -95,7 +95,7 @@ let trafficData4 = {
         data: [10000, 600, 1500, 2000, 5000, 1750, 1250, 1050, 250, 1500,
             2500
         ],
-        backgroundColor: 'rgba(116, 119, 191, .3)',
+        backgroundColor: 'rgba(195,237,234, .3)',
         borderWidth: 1,
     }]
 
@@ -108,7 +108,8 @@ let trafficOptions = {
     aspectRatio: 2.5,
     responsive: true,
     animation: {
-        duration: 0
+        duration: 1
+
     },
     scales: {
         yAxes: [{
@@ -170,7 +171,7 @@ const dailyData = {
     datasets: [{
         label: '# of Hits',
         data: [75, 115, 175, 125, 225, 200, 100],
-        backgroundColor: '#7477BF',
+        backgroundColor: '#c3edea',
         borderWidth: 1
     }]
 };
@@ -203,7 +204,7 @@ const mobileData = {
         data: [2000, 550, 500],
         borderWidth: 0,
         backgroundColor: [
-            '#7477BF',
+            '#1f4068',
             '#78CF82',
             '#51B6C8'
         ]
