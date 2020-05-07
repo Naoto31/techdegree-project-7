@@ -108,7 +108,8 @@ let trafficOptions = {
     aspectRatio: 2.5,
     responsive: true,
     animation: {
-        duration: 1
+        duration: 1000 * 1,
+        easing: 'linear'
 
     },
     scales: {
