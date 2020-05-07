@@ -205,8 +205,12 @@ main {
     position: relative;
 }
 
+.bell:hover {
+    cursor: pointer;
+}
+
 .drop-down li {
-    padding: 10px 0 10px 20px; 
+    padding: 10px 0 10px 20px;
     border-radius: 10px;
     font-size: 1em;
     color: white;
@@ -344,6 +348,10 @@ h4 {
 
 /* Section E___New Members & Recent Activity */
 
+#section-e img {
+    display: none;
+}
+
 /* New Members */
 
 .new-members {
@@ -390,11 +398,11 @@ h4 {
 }
 
 .member-container p {
-    font-size: 0.7em;
+    font-size: 0.6em;
 }
 
 .member-container-bottom p {
-    font-size: 0.7em;
+    font-size: 0.6em;
 }
 
 .member-name {
@@ -424,6 +432,11 @@ h4 {
 .recent-activity h3 {
     margin: 20px 15px;
 
+}
+
+.recent-activity h4 {
+    font-size: 0.8em;
+    padding-right: 10px;
 }
 
 .recent-activity ul {
@@ -507,23 +520,25 @@ textarea,
     top: 100%;
     left: 0;
     right: 0;
-  }
+}
 
-  .autocomplete-items div {
+.autocomplete-items div {
     padding: 10px;
     cursor: pointer;
     background-color: #fff;
     border-bottom: 1px solid #d4d4d4;
-  }
-  .autocomplete-items div:hover {
+}
+
+.autocomplete-items div:hover {
     /*when hovering an item:*/
     background-color: #e9e9e9;
-  }
-  .autocomplete-active {
+}
+
+.autocomplete-active {
     /*when navigating through the items using the arrow keys:*/
     background-color: DodgerBlue !important;
     color: #ffffff;
-  }
+}
 
 
 
@@ -819,6 +834,10 @@ input:checked+.slider:after {
             "card-a card-b card-c";
     }
 
+    #section-d h4 {
+        font-size: 1.5em;
+    }
+
     .message-user {
         border-bottom: none;
 
@@ -873,6 +892,14 @@ input:checked+.slider:after {
     #section-e {
         padding: 0;
         margin: 0;
+    }
+
+    #section-e img {
+        display: unset;
+    }
+
+    #section-e a {
+        font-size: 0.7em;
     }
 
     .new-members {
@@ -935,8 +962,31 @@ input:checked+.slider:after {
 }
 
 
+@media (min-width: 1024px) {
 
-/* 
-    @media (min-width: 1024px) {
+    :root {
+        --main-bg-color: #feb72b;
+        --nav-color: #ffbd69;
+        --search-color: #ffd5ab;
+        --input-color: #aacfcf;
+    }
 
-    } */
+    .card {
+    border-style: none;
+    }
+
+    .card h4 {
+        color: white;
+    }
+
+    #section-d h4 {
+        font-size: 2.5em;
+    }
+
+    #section-e h4,
+    #section-e a,
+    #section-e p {
+        font-size: 1em;
+    }
+
+}

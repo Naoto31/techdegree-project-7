@@ -1,7 +1,7 @@
 const alertBanner = document.getElementById('alert');
-const user = document.getElementById("user");
-const message = document.getElementById("message");
-const send = document.getElementById("send");
+const user = document.getElementById('user');
+const message = document.getElementById('message');
+const send = document.getElementById('send');
 
 
 alertBanner.onload = setTimeout(function () {
@@ -24,142 +24,295 @@ function alertOnload() {
     })
 }
 
-// Traffic Chart 1
+// Traffic Charts
 
 let trafficCanvas = document.getElementById('traffic-chart').getContext('2d');
 
-let trafficData = {
-    labels: ["16-22", "23-29", "30-5", "6-12", "13-19", "20-26", "27-3",
-        "4-10", "11-17", "18-24", "25-31"
-    ],
-    datasets: [{
-        data: [750, 1250, 1000, 2000, 1500, 1750, 1250, 1850, 2250, 1500,
-            2500
-        ],
-        backgroundColor: 'rgba(195,237,234, .3)',
-        borderWidth: 1,
-    }]
-};
+if (matchMedia) {
+    const mq = window.matchMedia("(min-width: 1024px)");
+    mq.addListener(WidthChange);
+    WidthChange(mq);
+}
 
-let trafficData1 = {
-    labels: ["16-22", "23-29", "30-5", "6-12", "13-19", "20-26", "27-3",
-        "4-10", "11-17", "18-24", "25-31"
-    ],
-    datasets: [{
-        data: [750, 1250, 1000, 2000, 1500, 1750, 1250, 1850, 2250, 1500,
-            2500
-        ],
-        backgroundColor: 'rgba(195,237,234, .3)',
-        borderWidth: 1,
-    }]
-};
+function WidthChange(mq) {
+    if (!mq.matches) {
+        let trafficData = {
+            labels: ["16-22", "23-29", "30-5", "6-12", "13-19", "20-26", "27-3",
+                "4-10", "11-17", "18-24", "25-31"
+            ],
 
-// Traffic Chart 2
+            datasets: [{
+                data: [750, 1250, 1000, 2000, 1500, 1750, 1250, 1850, 2250, 1500,
+                    2500
+                ],
 
-let trafficData2 = {
-    labels: ["16-22", "23-29", "30-5", "6-12", "13-19", "20-26", "27-3",
-        "4-10", "11-17", "18-24", "25-31"
-    ],
-    datasets: [{
-        data: [750, 1600, 1000, 2000, 1500, 1750, 1250, 1050, 2250, 1500,
-            2500
-        ],
-        backgroundColor: 'rgba(195,237,234, .3)',
-        borderWidth: 1,
-    }]
-};
+                backgroundColor: 'rgba(195,237,234, .3)',
+                borderWidth: 1,
+            }]
+        };
+
+        // Traffic Chart 1
+
+        let trafficData1 = {
+            labels: ["16-22", "23-29", "30-5", "6-12", "13-19", "20-26", "27-3",
+                "4-10", "11-17", "18-24", "25-31"
+            ],
+            datasets: [{
+                data: [750, 1250, 1000, 2000, 1500, 1750, 1250, 1850, 2250, 1500,
+                    2500
+                ],
+                backgroundColor: 'rgba(195,237,234, .3)',
+                borderWidth: 1,
+            }]
+        };
 
 
-// Traffic Chart 3
 
-let trafficData3 = {
-    labels: ["16-22", "23-29", "30-5", "6-12", "13-19", "20-26", "27-3",
-        "4-10", "11-17", "18-24", "25-31"
-    ],
-    datasets: [{
-        data: [10000, 600, 1000, 2000, 500, 1750, 1250, 1050, 250, 1500,
-            2500
-        ],
-        backgroundColor: 'rgba(195,237,234, .3)',
-        borderWidth: 1,
-    }]
-};
+        // Traffic Chart 2
 
-// Traffic Chart 4
-
-let trafficData4 = {
-    labels: ["16-22", "23-29", "30-5", "6-12", "13-19", "20-26", "27-3",
-        "4-10", "11-17", "18-24", "25-31"
-    ],
-    datasets: [{
-        data: [10000, 600, 1500, 2000, 5000, 1750, 1250, 1050, 250, 1500,
-            2500
-        ],
-        backgroundColor: 'rgba(195,237,234, .3)',
-        borderWidth: 1,
-    }]
-
-};
+        let trafficData2 = {
+            labels: ["16-22", "23-29", "30-5", "6-12", "13-19", "20-26", "27-3",
+                "4-10", "11-17", "18-24", "25-31"
+            ],
+            datasets: [{
+                data: [750, 1600, 1000, 2000, 1500, 1750, 1250, 1050, 2250, 1500,
+                    2500
+                ],
+                backgroundColor: 'rgba(195,237,234, .3)',
+                borderWidth: 1,
+            }]
+        };
 
 
-// Traffic Options
+        // Traffic Chart 3
 
-let trafficOptions = {
-    aspectRatio: 2.5,
-    responsive: true,
-    animation: {
-        duration: 1000 * 1,
-        easing: 'linear'
+        let trafficData3 = {
+            labels: ["16-22", "23-29", "30-5", "6-12", "13-19", "20-26", "27-3",
+                "4-10", "11-17", "18-24", "25-31"
+            ],
+            datasets: [{
+                data: [10000, 600, 1000, 2000, 500, 1750, 1250, 1050, 250, 1500,
+                    2500
+                ],
+                backgroundColor: 'rgba(195,237,234, .3)',
+                borderWidth: 1,
+            }]
+        };
 
-    },
-    scales: {
-        yAxes: [{
-            ticks: {
-                beginAtZero: true
+        // Traffic Chart 4
+
+        let trafficData4 = {
+            labels: ["16-22", "23-29", "30-5", "6-12", "13-19", "20-26", "27-3",
+                "4-10", "11-17", "18-24", "25-31"
+            ],
+            datasets: [{
+                data: [10000, 600, 1500, 2000, 5000, 1750, 1250, 1050, 250, 1500,
+                    2500
+                ],
+                backgroundColor: 'rgba(195,237,234, .3)',
+                borderWidth: 1,
+            }]
+
+        };
+
+
+        // Traffic Options
+
+        let trafficOptions = {
+            aspectRatio: 2.5,
+            responsive: true,
+            animation: {
+                duration: 1000 * 1,
+                easing: 'linear'
+
+            },
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            },
+            legend: {
+                display: false
             }
-        }]
-    },
-    legend: {
-        display: false
-    }
-};
-
-let trafficChart = new Chart(trafficCanvas, {
-    type: 'line',
-    data: trafficData1,
-    options: trafficOptions
-});
-
-
-let trafficNav = document.getElementsByClassName('traffic-nav')[0];
-trafficNav.addEventListener('click', e => {
-    if (e.target.tagName === 'LI') {
-        let navName = e.target.textContent;
-        const navElement = e.target;
-        // console.log(navName);
-        // console.log(navElement);
-
-        if (navName === 'Hourly') {
-            trafficData = trafficData1;
-        }
-        if (navName === 'Daily') {
-            trafficData = trafficData2;
-        }
-        if (navName === 'Weekly') {
-            trafficData = trafficData3;
-        }
-        if (navName === 'Monthly') {
-            trafficData = trafficData4;
-        }
+        };
 
         let trafficChart = new Chart(trafficCanvas, {
             type: 'line',
-            data: trafficData,
+            data: trafficData1,
             options: trafficOptions
         });
-    }
-});
 
+
+        let trafficNav = document.getElementsByClassName('traffic-nav')[0];
+        trafficNav.addEventListener('click', e => {
+            if (e.target.tagName === 'LI') {
+                let navName = e.target.textContent;
+                const navElement = e.target;
+                // console.log(navName);
+                // console.log(navElement);
+
+                if (navName === 'Hourly') {
+                    trafficData = trafficData1;
+                }
+                if (navName === 'Daily') {
+                    trafficData = trafficData2;
+                }
+                if (navName === 'Weekly') {
+                    trafficData = trafficData3;
+                }
+                if (navName === 'Monthly') {
+                    trafficData = trafficData4;
+                }
+
+                let trafficChart = new Chart(trafficCanvas, {
+                    type: 'line',
+                    data: trafficData,
+                    options: trafficOptions
+                });
+            }
+        });
+    } else {
+
+        let trafficData = {
+            labels: ["16-22", "23-29", "30-5", "6-12", "13-19", "20-26", "27-3",
+                "4-10", "11-17", "18-24", "25-31"
+            ],
+
+            datasets: [{
+                data: [750, 1250, 1000, 2000, 1500, 1750, 1250, 1850, 2250, 1500,
+                    2500
+                ],
+
+                backgroundColor: 'rgba(255,213,171, .3)',
+                borderWidth: 1,
+            }]
+        };
+
+
+        let trafficData1 = {
+            labels: ["16-22", "23-29", "30-5", "6-12", "13-19", "20-26", "27-3",
+                "4-10", "11-17", "18-24", "25-31"
+            ],
+            datasets: [{
+                data: [750, 1250, 1000, 2000, 1500, 1750, 1250, 1850, 2250, 1500,
+                    2500
+                ],
+                backgroundColor: 'rgba(255,213,171, .3)',
+                borderWidth: 1,
+            }]
+        };
+
+
+
+        // Traffic Chart 2
+
+        let trafficData2 = {
+            labels: ["16-22", "23-29", "30-5", "6-12", "13-19", "20-26", "27-3",
+                "4-10", "11-17", "18-24", "25-31"
+            ],
+            datasets: [{
+                data: [750, 1600, 1000, 2000, 1500, 1750, 1250, 1050, 2250, 1500,
+                    2500
+                ],
+                backgroundColor: 'rgba(255,213,171, .3)',
+                borderWidth: 1,
+            }]
+        };
+
+
+        // Traffic Chart 3
+
+        let trafficData3 = {
+            labels: ["16-22", "23-29", "30-5", "6-12", "13-19", "20-26", "27-3",
+                "4-10", "11-17", "18-24", "25-31"
+            ],
+            datasets: [{
+                data: [10000, 600, 1000, 2000, 500, 1750, 1250, 1050, 250, 1500,
+                    2500
+                ],
+                backgroundColor: 'rgba(255,213,171, .3)',
+                borderWidth: 1,
+            }]
+        };
+
+        // Traffic Chart 4
+
+        let trafficData4 = {
+            labels: ["16-22", "23-29", "30-5", "6-12", "13-19", "20-26", "27-3",
+                "4-10", "11-17", "18-24", "25-31"
+            ],
+            datasets: [{
+                data: [10000, 600, 1500, 2000, 5000, 1750, 1250, 1050, 250, 1500,
+                    2500
+                ],
+                backgroundColor: 'rgba(255,213,171, .3)',
+                borderWidth: 1,
+            }]
+
+        };
+
+
+        // Traffic Options
+
+        let trafficOptions = {
+            aspectRatio: 2.5,
+            responsive: true,
+            animation: {
+                duration: 1000 * 1,
+                easing: 'linear'
+
+            },
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            },
+            legend: {
+                display: false
+            }
+        };
+
+        let trafficChart = new Chart(trafficCanvas, {
+            type: 'line',
+            data: trafficData1,
+            options: trafficOptions
+        });
+
+
+        let trafficNav = document.getElementsByClassName('traffic-nav')[0];
+        trafficNav.addEventListener('click', e => {
+            if (e.target.tagName === 'LI') {
+                let navName = e.target.textContent;
+                const navElement = e.target;
+                // console.log(navName);
+                // console.log(navElement);
+
+                if (navName === 'Hourly') {
+                    trafficData = trafficData1;
+                }
+                if (navName === 'Daily') {
+                    trafficData = trafficData2;
+                }
+                if (navName === 'Weekly') {
+                    trafficData = trafficData3;
+                }
+                if (navName === 'Monthly') {
+                    trafficData = trafficData4;
+                }
+
+                let trafficChart = new Chart(trafficCanvas, {
+                    type: 'line',
+                    data: trafficData,
+                    options: trafficOptions
+                });
+            }
+        });
+    }
+}
 
 
 // Section C - Daily Traffic & Mobile Users
@@ -233,7 +386,7 @@ let mobileChart = new Chart(mobileCanvas, {
 
 send.addEventListener('click', () => {
     // ensure user and message fields are filled out
-    if (user.innerHTML === "" && message.innerHTML === "") {
+    if (user.value === "" && message.value === "") {
         alert("Please fill out user and message fields before sending");
     } else if (user.value === "") {
         alert("Please fill out user field before sending");
@@ -379,26 +532,29 @@ const allInput = document.querySelectorAll('input[type="checkbox"]');
 const timeInput = document.querySelector('.time-zone');
 
 settingArea.addEventListener('click', (e) => {
-    if (e.target.classList.contains('save-button')) {
+    if (e.target.classList.contains('save-button'))
+    {
         for (let i = 0; i < allInput.length; i += 1) {
             localStorage.setItem(allInput[i].value, allInput[i].checked);
         }
         localStorage.setItem('selectValue', timeInput.value);
-    
     }
+
     if (e.target.classList.contains('cancel-button')) {
         localStorage.clear();
-        timeInput.value = 'choose-time';
+        timeInput.value = "";
+        localStorage.setItem('selectValue', timeInput.value);
         for (let i = 0; i < allInput.length; i += 1) {
             allInput[i].checked = false;
+            
         }
     }
 });
 
-// Retrieve all the infor from the local Storages
-for(let i = 0; i < allInput.length; i ++){
-    allInput[i].checked = localStorage.getItem(allInput[i].value) === 'true' ? true:false;
+for (let i = 0; i < allInput.length; i += 1) {
+    
+    // console.log(allInput[1].checked, allInput[1].value);
+    allInput[i].checked = localStorage.getItem(allInput[i].value) === "true" ? true:false;
+
 }
 timeInput.value = localStorage.getItem('selectValue');
-
-
