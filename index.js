@@ -535,15 +535,15 @@ settingArea.addEventListener('click', (e) => {
     if (e.target.classList.contains('save-button'))
     {
         for (let i = 0; i < allInput.length; i += 1) {
-            localStorage.setItem(allInput[i].value, allInput[i].checked);
-        }
+            localStorage.setItem(`checkbox${i + 1}`, allInput[i].checked);
+          }
         localStorage.setItem('selectValue', timeInput.value);
     }
 
     if (e.target.classList.contains('cancel-button')) {
         localStorage.clear();
         timeInput.value = "";
-        localStorage.setItem('selectValue', timeInput.value);
+        
         for (let i = 0; i < allInput.length; i += 1) {
             allInput[i].checked = false;
             
@@ -552,9 +552,13 @@ settingArea.addEventListener('click', (e) => {
 });
 
 for (let i = 0; i < allInput.length; i += 1) {
-    
-    // console.log(allInput[1].checked, allInput[1].value);
-    allInput[i].checked = localStorage.getItem(allInput[i].value) === "true" ? true:false;
+    JSON.parse(localStorage.getItem(`checkbox${i + 1}`)) ? allInput[i].checked = true : allInput[i].checked = false;
+  }
 
+  
+
+if (localStorage.length === 0) {
+    timeInput.value = "";
+} else {
+    timeInput.value = localStorage.getItem('selectValue');
 }
-timeInput.value = localStorage.getItem('selectValue');
