@@ -206,7 +206,16 @@ main {
 }
 
 .bell:hover {
-    cursor: pointer;
+    cursor: pointer;  
+}
+
+.bell-icon {
+    transition: .5s ease;
+}
+
+.bell-icon:hover {
+    transform: rotate(30deg);
+    fill: white;
 }
 
 .drop-down li {
